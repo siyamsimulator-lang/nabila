@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<title>For My Cute Nabila 💖</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive;
+  background: linear-gradient(to bottom, #ffd6e8, #ffb6d5);
+  overflow: hidden;
+  text-align: center;
+}
+
+.container {
+  margin-top: 60px;
+  padding: 20px;
+}
+
+h1 {
+  color: #ff2f92;
+  font-size: 38px;
+}
+
+p {
+  color: #c2185b;
+  font-size: 22px;
+}
+
+.doll {
+  width: 170px;
+  animation: bounce 2s infinite;
+}
+
+button {
+  background: #ff4fa3;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+button:hover {
+  background: #ff2f92;
+}
+
+/* Floating text */
+.floatingText {
+  position: absolute;
+  color: #ff2f92;
+  font-size: 20px;
+  animation: floatUp 6s linear forwards;
+  white-space: nowrap;
+}
+
+@keyframes floatUp {
+  0% {transform: translateY(0); opacity: 0;}
+  20% {opacity: 1;}
+  100% {transform: translateY(-200px); opacity: 0;}
+}
+
+@keyframes bounce {
+  0%,100% {transform: translateY(0);}
+  50% {transform: translateY(-15px);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>💗 My Cute Nabila 💗</h1>
+
+  <img class="doll" src="https://i.imgur.com/0Z8FQYB.png">
+
+  <p>
+    Nabila, তুমি যখন হাসো, তখন দুনিয়াটা বেশি সুন্দর লাগে 🌸  
+    আজ মন খারাপ হলে এই ছোট্ট surprise টা শুধু তোমার জন্য 💖
+  </p>
+
+  <button onclick="createFloatingText()">Click for Smile 😊</button>
+</div>
+
+<script>
+function createFloatingText() {
+  const messages = [
+    "Nabila, তুমি সবচেয়ে cute 🧸💖",
+    "তোমার হাসি আমার প্রিয় 🌸",
+  "তুমি খুশি থাকলে আমিও খুশি 🌸",
+ "তোমার হাসিতেই আমার শান্তি 🌸",
+ "তোমাকে অনেক অনেক ভালোবাসি 🌸",
+    "মন খারাপ তোমার সাথে মানায় না 💕",
+    "তুমি থাকলেই সব সুন্দর লাগে ✨",
+    "Smile please, Nabila 😊💗"
+  ];
+
+  let text = document.createElement("div");
+  text.className = "floatingText";
+  text.innerText = messages[Math.floor(Math.random() * messages.length)];
+
+  text.style.left = Math.random() * 70 + "vw";
+  text.style.top = "70vh";
+
+  document.body.appendChild(text);
+
+  setTimeout(() => {
+    text.remove();
+  }, 6000);
+}
+</script>
+
+</body>
+</html>
